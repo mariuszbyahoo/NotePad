@@ -62,6 +62,7 @@ public class Menu {
                                 System.out.println("Podaj id notki ktora chcesz wydrukowac: ");
                                 System.out.println(list.get(input.nextInt() - 1));
                                 System.out.println();
+                                correctShow = true;
                             } catch (InputMismatchException ex) {
                                 System.out.println("\n Ale tu musisz podac liczbe... a nie co innego, to teraz od nowa!");
                                 break;
