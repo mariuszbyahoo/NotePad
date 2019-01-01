@@ -1,5 +1,6 @@
 /**
  * Teraz potrzebuję obsłużyć wszystkie wyjątki tak, by to wszystko było idiotoodporne, potem porozdzielać do klas, i na końcu dodać grafikę
+ * obecny problem skutkuje tym, że pętla robi dwa obiegi na linii 23 po wykasowaniu albo pokazaniu notatki...
  */
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class Menu {
         Scanner input2 = new Scanner(System.in);
 
         boolean correctRemove;
+        boolean correctShow;
 
         ArrayList<String> list = new ArrayList<>();
 
@@ -24,6 +26,7 @@ public class Menu {
             System.out.println(menu);
             System.out.println("Notatnik zawiera: " + list.size() + " notatek");
             correctRemove = false;
+            correctShow = false;
             switch (input.nextLine()) {
                 case "1":
                     System.out.println("Id: " + id);
@@ -35,7 +38,7 @@ public class Menu {
                     if (list.size() == 0) {
                         System.out.println("\n No ale nie masz notatek jeszcze to co bedziesz kasowal?");
                     } else {
-                        while (!correctRemove)
+                        while (!correctRemove) {
                             try {
                                 System.out.println("Podaj id notki ktora chcesz wyrzucic: ");
                                 list.remove(input.nextInt() - 1);
@@ -47,16 +50,26 @@ public class Menu {
                                 System.out.println("\n Ale tu musisz podac liczbe... a nie co innego, to teraz od nowa!");
                                 break;
                             }
+                        }
                     }
-
                     break;
                 case "3":
                     if (list.size() == 0) {
                         System.out.println("Notatnik pusty");
                     } else {
-                        System.out.println("Podaj id notki ktora chcesz wydrukowac: ");
-                        System.out.println(list.get(input.nextInt() - 1));
-                        System.out.println();
+                        while (!correctShow) {
+                            try {
+                                System.out.println("Podaj id notki ktora chcesz wydrukowac: ");
+                                System.out.println(list.get(input.nextInt() - 1));
+                                System.out.println();
+                            } catch (InputMismatchException ex) {
+                                System.out.println("\n Ale tu musisz podac liczbe... a nie co innego, to teraz od nowa!");
+                                break;
+                            } catch (IndexOutOfBoundsException ex) {
+                                System.out.println("\n Na razie mamy: " + list.size() + " a Ty wpisales" +
+                                        " zly numer notatki...");
+                            }
+                        }
                     }
                     break;
                 default:
