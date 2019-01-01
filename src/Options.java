@@ -26,7 +26,7 @@ public class Options {
                     Menu.list.remove(input.nextInt() - 1);
                     correctRemove = true;
                 } catch (IndexOutOfBoundsException ex) {
-                    System.out.println("\n Na razie mamy: " + Menu.list.size() + " a Ty wpisales" +
+                    System.out.println("\n Na razie mamy: " + Menu.list.size() + " notatki, a Ty wpisales" +
                             " zly numer notatki...");
                 } catch (InputMismatchException ex) {
                     System.out.println("\n Ale tu musisz podac liczbe... a nie co innego, to teraz od nowa!");
@@ -55,6 +55,18 @@ public class Options {
                     System.out.println("\n Na razie mamy: " + Menu.list.size() + " a Ty wpisales" +
                             " zly numer notatki...");
                 }
+            }
+        }
+    }
+
+    void showAllNotes() {
+        correctShow = false;
+
+        if (Menu.list.size() == 0) {
+            System.out.println("Notatnik pusty");
+        } else {
+            for (int i = 0; i < Menu.list.size(); i++) {
+                System.out.println(Menu.list.get(i));
             }
         }
     }
