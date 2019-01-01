@@ -5,14 +5,15 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class NotePad {
-    public static void main(String[] args) {
+public class Menu {
+
+    void startMenu() {
         int id = 1;
         Scanner input = new Scanner(System.in);
         Scanner input2 = new Scanner(System.in);
 
         ArrayList<String> list = new ArrayList<>();
-        
+
         String menu = "1 -> Nowa notatka\n2 -> wykasowanie notatki\n3 -> pokazanie notatki";
 
         while (true) {
