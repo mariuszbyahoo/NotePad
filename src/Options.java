@@ -3,18 +3,23 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Options {
-    private int id = 1;
+    private int id = 0;
     private boolean correctRemove;
     private boolean correctShow;
     private Scanner input = new Scanner(System.in);
 
     private ArrayList<String> list = new ArrayList<>();
 
-    public ArrayList<String> getList() {
-        return list;
+    private String options = "\n Notatnik zawiera: " + list.size() + " notatek" +
+            "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Wykasowanie notatki\n3-> Wykasowanie wszystkich notatek" +
+            "\n4-> Pokazanie wybranej notatki\n5-> Pokazanie wszystkich notatek";
+
+    public void printOptions() {
+        System.out.println(options);
     }
 
     void addNote() {
+        id++;
         System.out.println("Id: " + id);
         String txt = input.nextLine();
         list.add(txt);
@@ -32,6 +37,7 @@ public class Options {
                     System.out.println("Podaj id notki ktora chcesz wyrzucic: ");
                     list.remove(input.nextInt() - 1);
                     correctRemove = true;
+                    System.out.println("Notka usunieta ");
                 } catch (IndexOutOfBoundsException ex) {
                     System.out.println("\n Na razie mamy: " + list.size() + " notatki, a Ty wpisales" +
                             " zly numer notatki...");
@@ -41,6 +47,12 @@ public class Options {
                 }
             }
         }
+    }
+
+    void removeAllNotes() {
+        System.out.println("\n Notatnik pusty");
+        list.clear();
+
     }
 
     void showNote() {
@@ -69,11 +81,11 @@ public class Options {
     void showAllNotes() {
         correctShow = false;
 
-        if (list.size() == 0) {
+        if (id == 0) {
             System.out.println("Notatnik pusty");
         } else {
-            for (int i = 0; i < list.size(); i++) {
-                System.out.println(list.get(i));
+            for (String specificNote : list) {
+                System.out.println(specificNote);
             }
         }
     }
