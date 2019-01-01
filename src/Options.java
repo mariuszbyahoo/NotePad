@@ -23,7 +23,6 @@ public class Options {
         System.out.println("Id: " + id);
         String txt = input.nextLine();
         list.add(txt);
-        id++;
     }
 
     void removeNote() {
