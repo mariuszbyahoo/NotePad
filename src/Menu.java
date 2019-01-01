@@ -3,12 +3,9 @@
  * obecny problem skutkuje tym, że pętla robi dwa obiegi na linii 23 po wykasowaniu albo pokazaniu notatki...
  */
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-
-    static ArrayList<String> list = new ArrayList<>();
 
     void startMenu() {
 
@@ -22,7 +19,7 @@ public class Menu {
         while (true) {
 
             System.out.println(menu);
-            System.out.println("Notatnik zawiera: " + list.size() + " notatek");
+            System.out.println("Notatnik zawiera: " + options.getList().size() + " notatek");
 
             switch (input.nextLine()) {
                 case "1":
@@ -38,7 +35,7 @@ public class Menu {
                     options.showAllNotes();
                     break;
                 case "5":
-                    Menu.list.clear();
+                    options.getList().clear();
                     break;
                 default:
                     System.out.println("Sorry, ale nie ma takiej komendy");
