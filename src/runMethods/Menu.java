@@ -1,8 +1,12 @@
+package runMethods;
+
+import data.Options;
+
 import java.util.Scanner;
 
 public class Menu {
 
-    void startMenu() {
+    public void startMenu() {
 
         Scanner input = new Scanner(System.in);
 

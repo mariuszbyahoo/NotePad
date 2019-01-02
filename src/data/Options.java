@@ -1,3 +1,5 @@
+package data;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -10,22 +12,21 @@ public class Options {
 
     private ArrayList<String> list = new ArrayList<>();
 
-    private String options = "\n Notatnik zawiera: " + list.size() + " notatek" +
-            "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Wykasowanie notatki\n3-> Wykasowanie wszystkich notatek" +
+    private String options = "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Wykasowanie notatki\n3-> Wykasowanie wszystkich notatek" +
             "\n4-> Pokazanie wybranej notatki\n5-> Pokazanie wszystkich notatek";
 
     public void printOptions() {
         System.out.println(options);
     }
 
-    void addNote() {
+    public void addNote() {
         id++;
         System.out.println("Id: " + id);
         String txt = input.nextLine();
         list.add(txt);
     }
 
-    void removeNote() {
+    public void removeNote() {
         correctRemove = false;
 
         if (list.size() == 0) {
@@ -48,13 +49,13 @@ public class Options {
         }
     }
 
-    void removeAllNotes() {
+    public void removeAllNotes() {
         System.out.println("\n Notatnik pusty");
         list.clear();
 
     }
 
-    void showNote() {
+    public void showNote() {
         correctShow = false;
 
         if (list.size() == 0) {
@@ -77,7 +78,7 @@ public class Options {
         }
     }
 
-    void showAllNotes() {
+    public void showAllNotes() {
         correctShow = false;
 
         if (id == 0) {
