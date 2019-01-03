@@ -81,12 +81,13 @@ public class Options {
 
     public void showAllNotes() {
         correctShow = false;
-
         if (id == 0) {
             System.out.println("Notatnik pusty");
         } else {
+            int noteId = 1;
             for (String specificNote : list) {
-                System.out.println(specificNote);
+                System.out.println(noteId + " " + specificNote);
+                noteId++;
             }
         }
     }
