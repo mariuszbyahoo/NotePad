@@ -22,8 +22,8 @@ public class Options {
     public void addNote() {
         id++;
         System.out.println("Id: " + id);
-        String txt = input.nextLine();
-        list.add(txt);
+        Note note = new Note(input.nextLine(), id);
+        list.add(note.getTxt());
     }
 
     public void removeNote() {
@@ -47,12 +47,13 @@ public class Options {
                 }
             }
         }
+        id -= 1;
     }
 
     public void removeAllNotes() {
         System.out.println("\n Notatnik pusty");
         list.clear();
-
+        id = 0;
     }
 
     public void showNote() {
