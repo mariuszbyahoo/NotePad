@@ -1,4 +1,7 @@
-package data;
+package methods;
+
+import data.NotePad.NotePad;
+import data.TimeTable.TimeTable;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -12,19 +15,15 @@ public class Options {
     private StringBuilder builder = new StringBuilder();
 
     NotePad notePad = new NotePad();
+    TimeTable timeTable = new TimeTable();
 
-    private ArrayList<String> list = notePad.getList();
+    public static ArrayList<String> list = new ArrayList<>();
+    public static int id = 0;
 
     private String message;
 
-    private String options1 = "\nDostepne opcje: \n1-> Otworz notatnik\n2-> Otworz terminarz\n3->Wyjscie z programu";
-
-    private String options2 = "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Wykasowanie notatki\n3-> Wykasowanie wszystkich notatek" +
-            "\n4-> Pokazanie wybranej notatki\n5-> Pokazanie wszystkich notatek";
-
-    public void useNotePad() {
-        list = notePad.getList();
-    }
+    private String options2 = "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Dodanie Notatki z data\n3-> Wykasowanie notatki" +
+            "\n4-> Wykasowanie wszystkich notatek\n5-> Pokazanie wybranej notatki\n6-> Pokazanie wszystkich notatek";
 
     public void printOptions() {
         System.out.println(options2);
@@ -32,7 +31,10 @@ public class Options {
 
     public void addNote() {
         notePad.addElement();
-        notePad.setList();
+    }
+
+    public void addDatedNote() {
+        timeTable.addElement();
     }
 
     public void removeElement() {
@@ -60,13 +62,13 @@ public class Options {
                 }
             }
         }
-        notePad.setNotePadId(notePad.getNotePadId() - 1);
+        id -= 1;
     }
 
     public void removeAllElements() {
         System.out.println("\n Notatnik pusty");
         list.clear();
-        notePad.setNotePadId(notePad.getNotePadId());
+        id = 0;
     }
 
     public void showElement() {
@@ -99,19 +101,19 @@ public class Options {
 
     public void showAllElements() {
         correctShow = false;
-        if (notePad.getNotePadId() == 0) {
+        if (id == 0) {
             System.out.println("Notatnik pusty");
         } else {
             int noteId = 1;
-            String message;
+            String message = new String();
             for (String specificNote : list) {
                 builder.append(noteId);
-                builder.append(" ");
+                builder.append(" \n");
                 builder.append(specificNote);
                 message = builder.toString();
-                System.out.println(message);
                 noteId++;
             }
+            System.out.println(message);
         }
     }
 }

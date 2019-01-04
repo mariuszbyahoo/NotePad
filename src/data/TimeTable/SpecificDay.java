@@ -1,4 +1,4 @@
-package data;
+package data.TimeTable;
 
 import java.util.Scanner;
 

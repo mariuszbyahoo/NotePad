@@ -1,4 +1,4 @@
-package data;
+package data.NotePad;
 
 public class Note {
     private String txt;

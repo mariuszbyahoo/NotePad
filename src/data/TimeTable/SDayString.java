@@ -1,4 +1,4 @@
-package data;
+package data.TimeTable;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class SDayString {
     private StringBuilder builder = new StringBuilder();
 
     public SDayString() {
-        setData(createData());
+
     }
 
     public String createData() {

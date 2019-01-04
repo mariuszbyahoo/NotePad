@@ -1,6 +1,4 @@
-package runMethods;
-
-import data.Options;
+package methods;
 
 import java.util.Scanner;
 
@@ -21,17 +19,22 @@ public class Menu {
                     options.addNote();
                     break;
                 case "2":
-                    options.removeElement();
+                    options.addDatedNote();
                     break;
                 case "3":
-                    options.removeAllElements();
+                    options.removeElement();
                     break;
                 case "4":
-                    options.showElement();
+                    options.removeAllElements();
                     break;
                 case "5":
+                    options.showElement();
+                    break;
+                case "6":
                     options.showAllElements();
                     break;
+                case "0":
+                    System.exit(0);
                 default:
                     System.out.println("Sorry, ale nie ma takiej komendy");
                     break;

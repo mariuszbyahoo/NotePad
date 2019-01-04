@@ -1,4 +1,4 @@
-import runMethods.Menu;
+import methods.Menu;
 
 public class Launch {
     public static void main(String[] args) {
