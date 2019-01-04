@@ -22,7 +22,7 @@ public class Options {
     public void addNote() {
         id++;
         System.out.println("Id: " + id);
-        Note note = new Note(input.nextLine(), id);
+        Note note = new Note(input.nextLine());
         list.add(note.getTxt());
     }
 

@@ -1,12 +1,25 @@
 package data;
 
 public class Note {
+    private String data;
     private String txt;
-    private int id;
 
-    public Note(String txt, int id) {
+    SDayString sds = new SDayString();
+
+    public Note(String txt) {
         setTxt(txt);
-        setId(id);
+    }
+
+    public Note(String txt, String data) {
+        setData(sds.getData());
+    }
+
+    private String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 
     public String getTxt() {
@@ -15,9 +28,5 @@ public class Note {
 
     public void setTxt(String txt) {
         this.txt = txt;
-    }
-
-    private void setId(int id) {
-        this.id = id;
     }
 }

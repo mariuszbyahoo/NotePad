@@ -1,48 +1,39 @@
 package data;
 
 public class SpecificDay {
-    private int day;
-    private int month;
-    private int year;
+    private int d;
+    private int m;
+    private int y;
 
-    private String toDo;
+    private String data = d + "." + m + "." + y + "r.";
 
     public SpecificDay() {
-        setDay(day);
-        setMonth(month);
-        setYear(year);
-        setToDo(toDo);
+        setD(d);
+        setM(m);
+        setY(y);
     }
 
-    public void printSpecDay() {
-        System.out.println(day + "." + month + "." + year);
+    private void setD(int d) {
+        this.d = d;
     }
 
-    public void setToDo(String toDo) {
-        this.toDo = toDo;
+    public int getD() {
+        return d;
     }
 
-    private void setDay(int day) {
-        this.day = day;
+    public void setM(int m) {
+        this.m = m;
     }
 
-    public int getDay() {
-        return day;
+    public int getM() {
+        return m;
     }
 
-    public void setMonth(int month) {
-        this.month = month;
+    public void setY(int y) {
+        this.y = y;
     }
 
-    public int getMonth() {
-        return month;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getYear() {
-        return year;
+    public int getY() {
+        return y;
     }
 }
