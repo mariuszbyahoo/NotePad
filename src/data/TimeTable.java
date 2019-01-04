@@ -1,4 +1,4 @@
-/**package data;
+package data;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,8 +13,6 @@ public class TimeTable {
 
  private Scanner input = new Scanner(System.in);
 
- Note note = new Note(data , txt);
-
     public ArrayList<String> getList() {
         return list;
     }
@@ -28,8 +26,8 @@ public class TimeTable {
  TimeTableId++;
  System.out.println("Id: " + TimeTableId);
  sDayString.setData(sDayString.createData());
- Note note = new Note(input.nextLine() , sDayString.getData());
-        list.add(note.getTxt());
+        DatedNote datedNote = new DatedNote(input.nextLine(), sDayString.getData());
+        list.add(datedNote.getTxt());
     }
 
  public int getTimeTableId() {
@@ -40,4 +38,3 @@ public class TimeTable {
  this.TimeTableId = timeTableId;
     }
 }
- **/

@@ -9,6 +9,8 @@ public class Options {
     private boolean correctShow;
     private Scanner input = new Scanner(System.in);
 
+    private StringBuilder builder = new StringBuilder();
+
     NotePad notePad = new NotePad();
 
     private ArrayList<String> list = notePad.getList();
@@ -67,6 +69,7 @@ public class Options {
         if (list.size() == 0) {
             System.out.println("Notatnik pusty");
         } else {
+            String message;
             while (!correctShow) {
                 try {
                     System.out.println("Podaj id notki ktora chcesz wydrukowac: ");
@@ -77,8 +80,12 @@ public class Options {
                     System.out.println("\n Ale tu musisz podac liczbe... a nie co innego, to teraz od nowa!");
                     break;
                 } catch (IndexOutOfBoundsException ex) {
-                    System.out.println("\n Na razie mamy: " + list.size() + " a Ty wpisales" +
-                            " zly numer notatki...");
+                    builder.append("\n Na razie mamy: ");
+                    builder.append(list.size());
+                    builder.append(" a Ty wpisales zly numer notatki...");
+                    message = builder.toString();
+                    System.out.println(message);
+
                 }
             }
         }
@@ -90,8 +97,13 @@ public class Options {
             System.out.println("Notatnik pusty");
         } else {
             int noteId = 1;
+            String message;
             for (String specificNote : list) {
-                System.out.println(noteId + " " + specificNote);
+                builder.append(noteId);
+                builder.append(" ");
+                builder.append(specificNote);
+                message = builder.toString();
+                System.out.println(message);
                 noteId++;
             }
         }

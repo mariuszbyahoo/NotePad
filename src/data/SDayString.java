@@ -7,8 +7,9 @@ public class SDayString {
 
     private SpecificDay sDay = new SpecificDay();
 
-    public Scanner input = new Scanner(System.in);
+    private Scanner input = new Scanner(System.in);
 
+    private StringBuilder builder = new StringBuilder();
     public SDayString() {
         setData(createData());
     }
@@ -20,7 +21,13 @@ public class SDayString {
         sDay.setM(input.nextInt());
         System.out.println("Roku: ");
         sDay.setY(input.nextInt());
-        this.data = sDay.getD() + "." + sDay.getM() + "." + sDay.getY() + "r.";
+        builder.append(sDay.getD());
+        builder.append(".");
+        builder.append(sDay.getM());
+        builder.append(".");
+        builder.append(sDay.getY());
+        builder.append("r.");
+        this.data = builder.toString();
         return data;
     }
 
