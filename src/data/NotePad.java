@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NotePad {
-    Options opt = new Options();
     Scanner input = new Scanner(System.in);
     private ArrayList<String> list = new ArrayList<>();
 
-    private int id;
+    private int NotePadId;
 
     public ArrayList<String> getList() {
         return list;
@@ -19,17 +18,19 @@ public class NotePad {
     }
 
     public void addElement() {
-        id++;
-        System.out.println("Id: " + id);
-        Note note = new Note(input.nextLine());
+        NotePadId++;
+        System.out.println("Id: " + NotePadId);
+        System.out.println("Podaj notatkę: ");
+        String txt = input.nextLine();
+        Note note = new Note(txt);
         list.add(note.getTxt());
     }
 
-    public int getId() {
-        return id;
+    public int getNotePadId() {
+        return NotePadId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setNotePadId(int notePadId) {
+        this.NotePadId = notePadId;
     }
 }

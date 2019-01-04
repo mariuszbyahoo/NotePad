@@ -9,9 +9,9 @@ public class Options {
     private boolean correctShow;
     private Scanner input = new Scanner(System.in);
 
-    private ArrayList<String> list;
-
     NotePad notePad = new NotePad();
+
+    private ArrayList<String> list = notePad.getList();
 
     private String options1 = "\nDostepne opcje: \n1-> Otworz notatnik\n2-> Otworz terminarz\n3->Wyjscie z programu";
 
@@ -28,6 +28,7 @@ public class Options {
 
     public void addNote() {
         notePad.addElement();
+        notePad.setList();
     }
 
     public void removeElement() {
@@ -51,13 +52,13 @@ public class Options {
                 }
             }
         }
-        notePad.setId(notePad.getId() - 1);
+        notePad.setNotePadId(notePad.getNotePadId() - 1);
     }
 
     public void removeAllElements() {
         System.out.println("\n Notatnik pusty");
         list.clear();
-        notePad.setId(notePad.getId());
+        notePad.setNotePadId(notePad.getNotePadId());
     }
 
     public void showElement() {
@@ -85,7 +86,7 @@ public class Options {
 
     public void showAllElements() {
         correctShow = false;
-        if (notePad.getId() == 0) {
+        if (notePad.getNotePadId() == 0) {
             System.out.println("Notatnik pusty");
         } else {
             int noteId = 1;

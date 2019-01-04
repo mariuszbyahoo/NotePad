@@ -20,6 +20,7 @@ public class SDayString {
         sDay.setM(input.nextInt());
         System.out.println("Roku: ");
         sDay.setY(input.nextInt());
+        this.data = sDay.getD() + "." + sDay.getM() + "." + sDay.getY() + "r.";
         return data;
     }
 

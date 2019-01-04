@@ -4,14 +4,8 @@ public class Note {
     private String data;
     private String txt;
 
-    SDayString sds = new SDayString();
-
     public Note(String txt) {
         setTxt(txt);
-    }
-
-    public Note(String txt, String data) {
-        setData(sds.getData());
     }
 
     private String getData() {
