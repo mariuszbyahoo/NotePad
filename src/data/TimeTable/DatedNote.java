@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class DatedNote {
     private String data;
     private String txt;
+    private String message;
 
     Scanner input = new Scanner(System.in);
     StringBuilder builder = new StringBuilder();
@@ -21,7 +22,9 @@ public class DatedNote {
         builder.append(this.txt);
         builder.append(" ");
         builder.append(this.data);
-        return builder.toString();
+        message = builder.toString();
+        builder.setLength(0);
+        return message;
     }
 
 

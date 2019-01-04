@@ -86,6 +86,7 @@ public class Options {
                     builder.append(list.get(input.nextInt() - 1));
                     System.out.println(builder.toString());
                     correctShow = true;
+                    builder.setLength(0);
                 } catch (InputMismatchException ex) {
                     System.out.println("\n Ale tu musisz podac liczbe... a nie co innego, to teraz od nowa!");
                     break;
@@ -95,6 +96,7 @@ public class Options {
                     builder.append(" a Ty wpisales zly numer notatki...");
                     message = builder.toString();
                     System.out.println(message);
+                    builder.setLength(0);
                 }
             }
         }
@@ -117,6 +119,7 @@ public class Options {
                 noteId++;
             }
             System.out.println(message);
+            builder.setLength(0);
         }
     }
 }
