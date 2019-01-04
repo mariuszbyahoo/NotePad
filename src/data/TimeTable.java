@@ -3,12 +3,14 @@ package data;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class NotePad {
-    Options opt = new Options();
-    Scanner input = new Scanner(System.in);
+public class TimeTable {
     private ArrayList<String> list = new ArrayList<>();
 
     private int id;
+    private String data;
+    private String txt;
+
+    Scanner input = new Scanner(System.in);
 
     public ArrayList<String> getList() {
         return list;

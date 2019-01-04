@@ -27,7 +27,7 @@ public class Options {
     }
 
     public void addNote() {
-        notePad.addNote();
+        notePad.addElement();
     }
 
     public void removeElement() {

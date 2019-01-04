@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Scanner;
+
 public class SpecificDay {
     private int d;
     private int m;
@@ -13,7 +15,7 @@ public class SpecificDay {
         setY(y);
     }
 
-    private void setD(int d) {
+    public void setD(int d) {
         this.d = d;
     }
 
