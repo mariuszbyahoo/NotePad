@@ -107,8 +107,9 @@ public class Options {
             int noteId = 1;
             String message = new String();
             for (String specificNote : list) {
+                builder.append("\n");
                 builder.append(noteId);
-                builder.append(" \n");
+                builder.append(" ");
                 builder.append(specificNote);
                 message = builder.toString();
                 noteId++;
