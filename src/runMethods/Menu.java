@@ -21,16 +21,16 @@ public class Menu {
                     options.addNote();
                     break;
                 case "2":
-                    options.removeNote();
+                    options.removeElement();
                     break;
                 case "3":
-                    options.removeAllNotes();
+                    options.removeAllElements();
                     break;
                 case "4":
-                    options.showNote();
+                    options.showElement();
                     break;
                 case "5":
-                    options.showAllNotes();
+                    options.showAllElements();
                     break;
                 default:
                     System.out.println("Sorry, ale nie ma takiej komendy");

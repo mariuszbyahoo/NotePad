@@ -5,28 +5,32 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Options {
-    private int id = 0;
     private boolean correctRemove;
     private boolean correctShow;
     private Scanner input = new Scanner(System.in);
 
-    private ArrayList<String> list = new ArrayList<>();
+    private ArrayList<String> list;
 
-    private String options = "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Wykasowanie notatki\n3-> Wykasowanie wszystkich notatek" +
+    NotePad notePad = new NotePad();
+
+    private String options1 = "\nDostepne opcje: \n1-> Otworz notatnik\n2-> Otworz terminarz\n3->Wyjscie z programu";
+
+    private String options2 = "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Wykasowanie notatki\n3-> Wykasowanie wszystkich notatek" +
             "\n4-> Pokazanie wybranej notatki\n5-> Pokazanie wszystkich notatek";
 
+    public void useNotePad() {
+        list = notePad.getList();
+    }
+
     public void printOptions() {
-        System.out.println(options);
+        System.out.println(options2);
     }
 
     public void addNote() {
-        id++;
-        System.out.println("Id: " + id);
-        Note note = new Note(input.nextLine());
-        list.add(note.getTxt());
+        notePad.addNote();
     }
 
-    public void removeNote() {
+    public void removeElement() {
         correctRemove = false;
 
         if (list.size() == 0) {
@@ -47,16 +51,16 @@ public class Options {
                 }
             }
         }
-        id -= 1;
+        notePad.setId(notePad.getId() - 1);
     }
 
-    public void removeAllNotes() {
+    public void removeAllElements() {
         System.out.println("\n Notatnik pusty");
         list.clear();
-        id = 0;
+        notePad.setId(notePad.getId());
     }
 
-    public void showNote() {
+    public void showElement() {
         correctShow = false;
 
         if (list.size() == 0) {
@@ -79,9 +83,9 @@ public class Options {
         }
     }
 
-    public void showAllNotes() {
+    public void showAllElements() {
         correctShow = false;
-        if (id == 0) {
+        if (notePad.getId() == 0) {
             System.out.println("Notatnik pusty");
         } else {
             int noteId = 1;
