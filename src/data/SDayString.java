@@ -10,6 +10,7 @@ public class SDayString {
     private Scanner input = new Scanner(System.in);
 
     private StringBuilder builder = new StringBuilder();
+
     public SDayString() {
         setData(createData());
     }

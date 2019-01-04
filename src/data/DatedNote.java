@@ -5,7 +5,7 @@ public class DatedNote {
     private String txt;
 
 
-    public DatedNote(String txt, String data) {
+    public DatedNote(String txt) {
         SDayString sDayString = new SDayString();
         setTxt(txt);
         setData(sDayString.getData());

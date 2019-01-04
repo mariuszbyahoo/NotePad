@@ -15,6 +15,8 @@ public class Options {
 
     private ArrayList<String> list = notePad.getList();
 
+    private String message;
+
     private String options1 = "\nDostepne opcje: \n1-> Otworz notatnik\n2-> Otworz terminarz\n3->Wyjscie z programu";
 
     private String options2 = "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Wykasowanie notatki\n3-> Wykasowanie wszystkich notatek" +
@@ -41,13 +43,17 @@ public class Options {
         } else {
             while (!correctRemove) {
                 try {
+                    message = null;
                     System.out.println("Podaj id notki ktora chcesz wyrzucic: ");
                     list.remove(input.nextInt() - 1);
                     correctRemove = true;
                     System.out.println("Notka usunieta ");
                 } catch (IndexOutOfBoundsException ex) {
-                    System.out.println("\n Na razie mamy: " + list.size() + " notatki, a Ty wpisales" +
-                            " zly numer notatki...");
+                    builder.append("\nNa razie mamy: ");
+                    builder.append(list.size());
+                    builder.append(" notatnki, a Ty wpisales zly numer notatki");
+                    message = builder.toString();
+                    System.out.println(message);
                 } catch (InputMismatchException ex) {
                     System.out.println("\n Ale tu musisz podac liczbe... a nie co innego, to teraz od nowa!");
                     break;
