@@ -73,7 +73,7 @@ public class Options {
 
     public void showElement() {
         correctShow = false;
-
+        StringBuilder builder = new StringBuilder();
         if (list.size() == 0) {
             System.out.println("Notatnik pusty");
         } else {
@@ -81,8 +81,10 @@ public class Options {
             while (!correctShow) {
                 try {
                     System.out.println("Podaj id notki ktora chcesz wydrukowac: ");
-                    System.out.println(list.get(input.nextInt() - 1));
-                    System.out.println();
+                    builder.append(id);
+                    builder.append(" ");
+                    builder.append(list.get(input.nextInt() - 1));
+                    System.out.println(builder.toString());
                     correctShow = true;
                 } catch (InputMismatchException ex) {
                     System.out.println("\n Ale tu musisz podac liczbe... a nie co innego, to teraz od nowa!");
@@ -93,13 +95,13 @@ public class Options {
                     builder.append(" a Ty wpisales zly numer notatki...");
                     message = builder.toString();
                     System.out.println(message);
-
                 }
             }
         }
     }
 
     public void showAllElements() {
+        StringBuilder builder = new StringBuilder();
         correctShow = false;
         if (id == 0) {
             System.out.println("Notatnik pusty");
