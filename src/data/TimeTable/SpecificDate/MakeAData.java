@@ -7,6 +7,7 @@ public class MakeAData {
     private MakeADay makeADay = new MakeADay();
     private MakeAMonth makeAMonth = new MakeAMonth();
     private MakeAnYear makeAnYear = new MakeAnYear();
+    private MakeAnHour makeAnHour = new MakeAnHour();
 
     private String data;
 
@@ -21,6 +22,9 @@ public class MakeAData {
 
         builder.append(makeAnYear.make());
         builder.append("r.");
+
+        builder.append(" Godzina: ");
+        builder.append(makeAnHour.make());
 
         this.data = builder.toString();
         return data;

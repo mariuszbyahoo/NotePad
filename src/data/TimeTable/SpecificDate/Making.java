@@ -6,5 +6,4 @@ public interface Making {
     Scanner input = new Scanner(System.in);
 
     int make();
-
 }
