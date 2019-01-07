@@ -1,13 +1,11 @@
 package data.TimeTable.SpecificDate;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
-public class MakeAMonth {
-    Scanner input = new Scanner(System.in);
+public class MakeAMonth implements Making {
     private int number;
 
-    public int makeAMonth() {
+    public int make() {
         while (true) {
             try {
                 System.out.println("Miesiaca: ");

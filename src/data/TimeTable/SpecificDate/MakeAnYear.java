@@ -1,18 +1,16 @@
 package data.TimeTable.SpecificDate;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
-public class MakeAnYear {
-    Scanner input = new Scanner(System.in);
+public class MakeAnYear implements Making {
     private int number;
 
-    public int makeAnYear() {
+    public int make() {
         while (true) {
             try {
                 System.out.println("Roku: ");
                 number = input.nextInt();
-                if (number < 2018) {
+                if (number < 2019) {
                     System.out.println("Nie mozna planowac przeszlosci... No zastanow sie...");
                 } else {
                     break;

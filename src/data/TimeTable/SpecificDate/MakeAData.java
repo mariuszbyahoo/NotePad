@@ -12,13 +12,14 @@ public class MakeAData {
 
     public String makeAData() {
 
-        builder.append(makeADay.makeADay());
+        builder.append(" Dnia: ");
+        builder.append(makeADay.make());
         builder.append(".");
 
-        builder.append(makeAMonth.makeAMonth());
+        builder.append(makeAMonth.make());
         builder.append(".");
 
-        builder.append(makeAnYear.makeAnYear());
+        builder.append(makeAnYear.make());
         builder.append("r.");
 
         this.data = builder.toString();

@@ -1,14 +1,12 @@
 package data.TimeTable.SpecificDate;
 
 import java.util.InputMismatchException;
-import java.util.Scanner;
 
-public class MakeADay {
-
+public class MakeADay implements Making {
     private int number;
-    Scanner input = new Scanner(System.in);
 
-    public int makeADay() {
+    @Override
+    public int make() {
         while (true) {
             try {
                 System.out.println("Dnia: ");
