@@ -34,7 +34,7 @@ public class CreateFile {
 
     public void saveToFile() {
         try (
-                FileWriter fileWriter = new FileWriter(fileName);
+                FileWriter fileWriter = new FileWriter(fileName, true);
                 BufferedWriter writer = new BufferedWriter(fileWriter)
         ) {
             for (int i = 0; i < Options.list.size(); i++) {
