@@ -1,5 +1,7 @@
 package data.TimeTable;
 
+import data.TimeTable.SpecificDate.MakeAData;
+
 import java.util.Scanner;
 
 public class DatedNote {
@@ -9,7 +11,7 @@ public class DatedNote {
 
     Scanner input = new Scanner(System.in);
     StringBuilder builder = new StringBuilder();
-    SDayString sDayString = new SDayString();
+    MakeAData makeAData = new MakeAData();
 
     public DatedNote() {
 
@@ -18,7 +20,7 @@ public class DatedNote {
     public String addNote() {
         System.out.println("Napisz, co chcesz zanotowac, pozniej podasz date: ");
         setTxt(input.nextLine());
-        setData(sDayString.createData());
+        setData(makeAData.makeAData());
         builder.append(this.txt);
         builder.append(" ");
         builder.append(this.data);
