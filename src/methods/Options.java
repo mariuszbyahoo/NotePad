@@ -1,6 +1,7 @@
 package methods;
 
 import InputOutput.CreateFile;
+import InputOutput.LoadFile;
 import data.NotePad.NotePad;
 import data.TimeTable.TimeTable;
 
@@ -25,7 +26,7 @@ public class Options {
 
     private String options2 = "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Dodanie Notatki z data\n3-> Wykasowanie notatki" +
             "\n4-> Wykasowanie wszystkich notatek\n5-> Pokazanie wybranej notatki\n6-> Pokazanie wszystkich notatek\n7-> Zapis do pliku" +
-            "\n0-> Wyjscie z programu";
+            "\n8-> Wczytanie uprzednio zapisanego pliku\n0-> Wyjscie z programu";
 
     public void printOptions() {
         System.out.println(options2);
@@ -129,6 +130,10 @@ public class Options {
         CreateFile createFile = new CreateFile();
         createFile.createFile();
         createFile.saveToFile();
+    }
 
+    public void loadNotes() {
+        LoadFile loadFile = new LoadFile();
+        loadFile.loadFile();
     }
 }

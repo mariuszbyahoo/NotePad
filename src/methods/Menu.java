@@ -35,6 +35,10 @@ public class Menu {
                     break;
                 case "7":
                     options.saveNotes();
+                    break;
+                case "8":
+                    options.loadNotes();
+                    break;
                 case "0":
                     System.exit(0);
                 default:
