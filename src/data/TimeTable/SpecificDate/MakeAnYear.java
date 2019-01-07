@@ -1,5 +1,6 @@
 package data.TimeTable.SpecificDate;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MakeAnYear {
@@ -8,12 +9,17 @@ public class MakeAnYear {
 
     public int makeAnYear() {
         while (true) {
-            System.out.println("Roku: ");
-            number = input.nextInt();
-            if (number < 2018) {
-                System.out.println("Nie mozna planowac przeszlosci... No zastanow sie...");
-            } else {
-                break;
+            try {
+                System.out.println("Roku: ");
+                number = input.nextInt();
+                if (number < 2018) {
+                    System.out.println("Nie mozna planowac przeszlosci... No zastanow sie...");
+                } else {
+                    break;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Ale miales wpisac cyfry, a nie jakies literki...");
+                input.nextLine();
             }
         }
         return number;
