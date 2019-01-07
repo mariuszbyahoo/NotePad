@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class SDayString {
     private String data;
+    private int number;
 
     private SpecificDay sDay = new SpecificDay();
 
@@ -16,8 +17,16 @@ public class SDayString {
     }
 
     public String createData() {
-        System.out.println("Dnia: ");
-        sDay.setD(input.nextInt());
+        while (true) {
+            System.out.println("Dnia: ");
+            number = input.nextInt();
+            if (number > 31 || number < 0) {
+                System.out.println("Miesiac ma najwyzej 31 dni... Podaj jeszcze raz.");
+            } else {
+                break;
+            }
+        }
+        sDay.setD(number);
         System.out.println("Miesiaca: ");
         sDay.setM(input.nextInt());
         System.out.println("Roku: ");
