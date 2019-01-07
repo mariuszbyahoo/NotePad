@@ -24,6 +24,7 @@ public class DatedNote {
         builder.append(this.data);
         message = builder.toString();
         builder.setLength(0);
+        System.out.println("Dodano notatke w formie terminarza.");
         return message;
     }
 
