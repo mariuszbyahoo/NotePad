@@ -33,6 +33,8 @@ public class Menu {
                 case "6":
                     options.showAllElements();
                     break;
+                case "7":
+                    options.saveNotes();
                 case "0":
                     System.exit(0);
                 default:
