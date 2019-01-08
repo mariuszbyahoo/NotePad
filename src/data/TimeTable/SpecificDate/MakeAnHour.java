@@ -12,7 +12,7 @@ public class MakeAnHour {
     public String make() {
         while (true) {
             try {
-                System.out.println("O godzinie: ");
+                System.out.println("Godzina: ");
                 hour = input.nextInt();
                 if (hour > 24 || hour < 0) {
                     System.out.println("Dzien ma najwyzej 24 godziny... Podaj jeszcze raz.");
