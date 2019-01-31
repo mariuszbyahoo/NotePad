@@ -1,5 +1,7 @@
 package InputOutput;
 
+import data.NotePad.NotePad;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,10 +15,12 @@ public class LoadFile {
         System.out.println("Podaj nazwe pliku, ktory chcesz wpisac. Program za Ciebie doda suffix \".txt\"");
         try (
                 FileReader fileReader = new FileReader((input.nextLine() + ".txt"));
-                BufferedReader reader = new BufferedReader(fileReader);
+                BufferedReader reader = new BufferedReader(fileReader)
         ) {
+            NotePad notePad = new NotePad();
             while ((nextLine = reader.readLine()) != null) {
                 System.out.println(nextLine);
+                notePad.loadFromFile(nextLine);
             }
         } catch (IOException e) {
             System.err.println("Nie udalo sie wczytac pliku...");

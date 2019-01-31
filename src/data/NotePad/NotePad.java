@@ -17,4 +17,10 @@ public class NotePad {
         Note note = new Note(txt);
         Options.list.add(note.getTxt());
     }
+
+    public void loadFromFile(String loadedTxt) {
+        Options.id++;
+        Note note = new Note(loadedTxt);
+        Options.list.add(note.getTxt());
+    }
 }
