@@ -11,7 +11,7 @@ public class MakeAnYear implements Making {
                 System.out.println("Roku: ");
                 number = input.nextInt();
                 if (number < 2019) {
-                    System.out.println("Nie mozna planowac przeszlosci... No zastanow sie...");
+                    System.out.println("Nie zmienimy przeszlosci...");
                 } else {
                     break;
                 }
