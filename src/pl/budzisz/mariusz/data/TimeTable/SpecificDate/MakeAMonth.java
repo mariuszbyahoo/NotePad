@@ -1,17 +1,17 @@
-package data.TimeTable.SpecificDate;
+package pl.budzisz.mariusz.data.TimeTable.SpecificDate;
 
 import java.util.InputMismatchException;
 
-public class MakeAnYear implements Making {
+public class MakeAMonth implements Making {
     private int number;
 
     public int make() {
         while (true) {
             try {
-                System.out.println("Roku: ");
+                System.out.println("Miesiaca: ");
                 number = input.nextInt();
-                if (number < 2019) {
-                    System.out.println("Nie zmienimy przeszlosci...");
+                if (number > 12 || number < 0) {
+                    System.out.println("Rok ma najwyzej 12 miesiecy... Podaj jeszcze raz.");
                 } else {
                     break;
                 }

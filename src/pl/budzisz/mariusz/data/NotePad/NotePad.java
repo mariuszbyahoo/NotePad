@@ -1,6 +1,6 @@
-package data.NotePad;
+package pl.budzisz.mariusz.data.NotePad;
 
-import methods.Options;
+import pl.budzisz.mariusz.methods.Options;
 
 import java.util.Scanner;
 

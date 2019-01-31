@@ -1,4 +1,4 @@
-package data.TimeTable.SpecificDate;
+package pl.budzisz.mariusz.data.TimeTable.SpecificDate;
 
 import java.util.Scanner;
 

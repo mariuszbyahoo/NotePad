@@ -1,4 +1,4 @@
-package methods;
+package pl.budzisz.mariusz.methods;
 
 import java.util.Scanner;
 

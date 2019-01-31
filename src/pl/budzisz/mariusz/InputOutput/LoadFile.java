@@ -1,6 +1,6 @@
-package InputOutput;
+package pl.budzisz.mariusz.InputOutput;
 
-import data.NotePad.NotePad;
+import pl.budzisz.mariusz.data.NotePad.NotePad;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

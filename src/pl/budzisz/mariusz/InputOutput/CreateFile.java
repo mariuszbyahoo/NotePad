@@ -1,6 +1,6 @@
-package InputOutput;
+package pl.budzisz.mariusz.InputOutput;
 
-import methods.Options;
+import pl.budzisz.mariusz.methods.Options;
 
 import java.io.BufferedWriter;
 import java.io.File;

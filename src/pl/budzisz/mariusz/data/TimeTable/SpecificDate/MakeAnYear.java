@@ -1,18 +1,17 @@
-package data.TimeTable.SpecificDate;
+package pl.budzisz.mariusz.data.TimeTable.SpecificDate;
 
 import java.util.InputMismatchException;
 
-public class MakeADay implements Making {
+public class MakeAnYear implements Making {
     private int number;
 
-    @Override
     public int make() {
         while (true) {
             try {
-                System.out.println("Dnia: ");
+                System.out.println("Roku: ");
                 number = input.nextInt();
-                if (number > 31 || number < 0) {
-                    System.out.println("Miesiac ma najwyzej 31 dni... Podaj jeszcze raz.");
+                if (number < 2019) {
+                    System.out.println("Nie zmienimy przeszlosci...");
                 } else {
                     break;
                 }

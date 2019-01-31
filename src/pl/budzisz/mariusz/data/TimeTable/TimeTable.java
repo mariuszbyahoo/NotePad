@@ -1,6 +1,6 @@
-package data.TimeTable;
+package pl.budzisz.mariusz.data.TimeTable;
 
-import methods.Options;
+import pl.budzisz.mariusz.methods.Options;
 
 public class TimeTable {
 

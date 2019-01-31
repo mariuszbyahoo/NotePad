@@ -1,9 +1,9 @@
-package methods;
+package pl.budzisz.mariusz.methods;
 
-import InputOutput.CreateFile;
-import InputOutput.LoadFile;
-import data.NotePad.NotePad;
-import data.TimeTable.TimeTable;
+import pl.budzisz.mariusz.InputOutput.CreateFile;
+import pl.budzisz.mariusz.InputOutput.LoadFile;
+import pl.budzisz.mariusz.data.NotePad.NotePad;
+import pl.budzisz.mariusz.data.TimeTable.TimeTable;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -24,7 +24,7 @@ public class Options {
 
     private String message;
 
-    private String options2 = "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Dodanie Notatki z data\n3-> Wykasowanie notatki" +
+    private String options2 = "\nDostepne opcje: \n1-> Dodaj nowa notatke\n2-> Dodanie Notatki z pl.budzisz.mariusz.data\n3-> Wykasowanie notatki" +
             "\n4-> Wykasowanie wszystkich notatek\n5-> Pokazanie wybranej notatki\n6-> Pokazanie wszystkich notatek\n7-> Zapis do pliku" +
             "\n8-> Wczytanie uprzednio zapisanego pliku\n0-> Wyjscie z programu";
 

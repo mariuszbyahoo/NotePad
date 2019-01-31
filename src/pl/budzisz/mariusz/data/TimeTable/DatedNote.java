@@ -1,6 +1,6 @@
-package data.TimeTable;
+package pl.budzisz.mariusz.data.TimeTable;
 
-import data.TimeTable.SpecificDate.MakeAData;
+import pl.budzisz.mariusz.data.TimeTable.SpecificDate.MakeAData;
 
 import java.util.Scanner;
 

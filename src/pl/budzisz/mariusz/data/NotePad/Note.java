@@ -1,4 +1,4 @@
-package data.NotePad;
+package pl.budzisz.mariusz.data.NotePad;
 
 public class Note {
     private String txt;
